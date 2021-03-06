@@ -23,6 +23,18 @@ leaf.penup()
 leaf.hideturtle()
 leaf.speed(0)
 
+# add some text to the game
+game_started = False
+text_turtle = t.Turtle()
+text_turtle.write("Press SPACE to start", align='center', font=('Candara', 16, 'bold'))
+text_turtle.hideturtle()
+
+# add a turtle to print score
+score_turtle = t.Turtle()
+score_turtle.hideturtle()
+score_turtle.speed(0)
+
+
 
 
 
