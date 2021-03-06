@@ -16,6 +16,13 @@ caterpillar.hideturtle()
 # create a leaf turtle
 leaf = t.Turtle()
 leaf_shape = ((0, 0), (14, 2), (18, 6), (20, 20), (6, 18), (2, 14)) # leaf coordinates
+t.register_shape('leaf', leaf_shape)
+leaf.shape('leaf')
+leaf.color('green')
+leaf.penup()
+leaf.hideturtle()
+leaf.speed(0)
+
 
 
 
