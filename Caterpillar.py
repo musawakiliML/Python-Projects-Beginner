@@ -25,7 +25,7 @@ leaf.speed(0)
 # add some text to the game
 game_started = False
 text_turtle = t.Turtle()
-text_turtle.write("Press SPACE to start", align='center', font=('Candara', 16, 'bold'))
+text_turtle.write("Press SPACE to start", align='center', font=('Arial', 16, 'bold'))
 text_turtle.hideturtle()
 
 # add a turtle to print score
@@ -64,10 +64,14 @@ def display_score(current_score):
     x = (t.window_width() / 2) - 50
     y = (t.window_height() / 2) - 50
     score_turtle.setpos(x, y)
-    score_turtle.write(str(current_score), align='right', font=("Candara", 40, 'bold'))
+    score_turtle.write(str(current_score), align='right', font=("Arial", 40, 'bold'))
+
 
 def place_leaf():
-    pass
+    leaf.hideturtle()
+    leaf.setx(random.randint(-200, 200))
+    leaf.sety(random.randint(-200, 200))
+    leaf.showturtle()
 
 # Create the game Starter
 
@@ -102,6 +106,24 @@ def start_game():
         if outside_window():
             game_over()
             break
+
+def move_up():
+    if caterpillar.heading() == 0 or caterpillar.heading() == 180:
+        caterpillar.setheading(90)
+
+def move_down():
+    if caterpillar.heading() == 0 or caterpillar.heading() == 180:
+        caterpillar.setheading(270)
+
+def move_left():
+    if caterpillar.heading() == 90 or caterpillar.heading() == 270:
+        caterpillar.setheading(180)
+
+def move_right():
+    if caterpillar.heading() == 90 or caterpillar.heading() == 270:
+        caterpillar.setheading(0)
+
+
 
 # Bind and listen
 t.onkey(start_game,'space')
