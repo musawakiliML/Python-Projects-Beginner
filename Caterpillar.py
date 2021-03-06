@@ -4,7 +4,6 @@ import turtle as t
 
 # adds background color
 t.bgcolor('yellow')
-
 # create a caterpillar turtle
 caterpillar = t.Turtle()
 caterpillar.shape("square")
@@ -71,7 +70,9 @@ def start_game():
     place_leaf()
 
     # Start moving
-    
+    while True:
+
+
 
 
 
